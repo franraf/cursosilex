@@ -18,25 +18,11 @@ $app->get("/ola/{nome}", function($nome) {
 });
 
 $app->get("/clientes", function() {
-    $clientes = new ClienteAggregator();
-    $cli1 = new Cliente();
-    $cli2 = new Cliente();
-    $cli1->setNome("Rafa1");
-    $cli1->setEmail("rafa1@rafa.com");
-    $cli1->setCpf(12345678901);
-    $cli2->setNome("Rafa2");
-    $cli2->setEmail("rafa2@rafa.com");
-    $cli2->setCpf(23456789012);
-    $clientes->addCliente($cli1);
-    $clientes->addCliente($cli2);
-    $json = array();
-    foreach ($clientes->getClientes() as $cliente)
-    {
-        $post_data = array('Nome' => $cliente->getNome(), 'Email' => $cliente->getEmail(), 'CPF' => $cliente->getCPF());
-        $json = json_encode($post_data);
-    }
-
-    return json_encode($json);
+    $post_data1 = array('Nome' => 'Rafa1', 'Email' => 'rafa1@rafa.com', 'CPF' => '12345678901');
+    $post_data2 = array('Nome' => 'Rafa2', 'Email' => 'rafa2@rafa.com', 'CPF' => '23456789012');
+    $post_data = array($post_data1, $post_data2);
+    $json = json_encode($post_data);
+    return $json;
 });
 
 $app->run();
