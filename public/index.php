@@ -3,8 +3,6 @@
 require_once __DIR__.'/../bootstrap.php';
 
 use Symfony\Component\HttpFoundation\Response;
-use Silex\Cliente\Cliente;
-use Silex\Cliente\ClienteAggregator;
 
 $response = new Response();
 
