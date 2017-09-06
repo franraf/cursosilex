@@ -3,6 +3,8 @@
         "psr-4": {"Code\\Sistema\\": "src/Code/Sistema/"}
     },
     "require": {
-        "silex/silex": "^2.2"
+        "silex/silex": "^2.2",
+        "twig/twig": "^2.0",
+        "symfony/twig-bridge": "^3.0"
     }
 }
