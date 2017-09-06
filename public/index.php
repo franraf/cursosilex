@@ -16,13 +16,12 @@ $app['clienteService'] = function() {
     return $clienteService;
 };
 
-$app->get("/", function() use ($response){
-    $response->setContent("Ola mundo!");
-    return $response;
+$app->get("/", function() use ($app){
+    return $app['twig']->render('index.twig', []);
 });
 
-$app->get("/ola/{nome}", function($nome) {
-    return "Ola {$nome}";
+$app->get("/ola/{nome}", function($nome) use ($app) {
+    return $app['twig']->render("ola.twig", ['nome' => $nome]);
 });
 
 $app->get("/clientes", function() {
