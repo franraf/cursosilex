@@ -15,4 +15,8 @@ $app->get("/ola/{nome}", function($nome) {
     return "Ola {$nome}";
 });
 
+$app->get("/cliente", function() {
+
+});
+
 $app->run();
