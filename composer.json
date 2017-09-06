@@ -1,4 +1,7 @@
 {
+    "autoload": {
+        "psr-0": {"Silex": "src/"}
+    },
     "require": {
         "silex/silex": "^2.2"
     }

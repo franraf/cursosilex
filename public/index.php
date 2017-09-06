@@ -29,10 +29,14 @@ $app->get("/clientes", function() {
     $cli2->setCpf(23456789012);
     $clientes->addCliente($cli1);
     $clientes->addCliente($cli2);
+    $json = array();
     foreach ($clientes->getClientes() as $cliente)
     {
-        json_encode($cliente);
+        $post_data = array('Nome' => $cliente->getNome(), 'Email' => $cliente->getEmail(), 'CPF' => $cliente->getCPF());
+        $json = json_encode($post_data);
     }
+
+    return json_encode($json);
 });
 
 $app->run();
